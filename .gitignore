@@ -4,6 +4,7 @@
 /out/*
 **/node_modules/
 *.properties
+*.iml
 
 
 

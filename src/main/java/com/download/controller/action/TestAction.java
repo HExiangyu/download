@@ -5,8 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
+ *
  * Created by hxy on 16/5/2.
  */
 
@@ -19,8 +22,15 @@ public class TestAction {
 
     @RequestMapping("login")
     @ResponseBody
-    public String login(){
-        return "卧槽";
+    public List<String> login(){
+        List<String> list = new ArrayList<>();
+        list.add("asd");
+        list.add("qweqwe");
+        list.add("qweqwe");
+        list.add("qweqwe");
+        list.add("qweqwe");
+        list.add("123dsa");
+        return list;
     }
 
 
