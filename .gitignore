@@ -3,8 +3,7 @@
 /build/*
 /out/*
 **/node_modules/
-*.example
-jdbc.properties
+*.properties
 
 
 
