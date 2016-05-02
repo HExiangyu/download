@@ -1,4 +1,4 @@
-group 'com.yuorfei'
+group 'com.download'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
