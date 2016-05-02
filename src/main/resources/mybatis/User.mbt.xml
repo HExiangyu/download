@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuorfei.dao.UserDao">
+
+    <select id="count" resultType="long">
+        select count(*) from user
+    </select>
+
+
+    <delete id="delete" parameterType="long">
+        delete from user where id=#{id}
+    </delete>
+
+    <select id="findByName" parameterType="string" resultType="map">
+        select * from user where name=#{name}
+    </select>
+
+    <insert id="insert" parameterType="com.yuorfei.bean.User" useGeneratedKeys="true" keyProperty="id">
+        insert into user (name,remark,nature, addr) values (#{name},#{remark},#{nature},#{addr})
+    </insert>
+
+
+</mapper>
