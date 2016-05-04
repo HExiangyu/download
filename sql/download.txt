@@ -1,0 +1,9 @@
+soft: id name  commonn_name url company_name description remark create_time update_time  default_version_id user_id
+version: id soft_id version_number description log create_time update_time user_id
+download: id version_id url description remark  create_time update_time user_id
+tag : id name value parent_id ident remark create_time update_time 
+tag_ref: id tag_id obj_id obj_type 
+
+platform 
+program_language
+soft_catelog
