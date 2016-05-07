@@ -21,26 +21,25 @@ gulp.task('sass', function() {
     gulp.src('./scss/*.scss')
         .pipe(sass())
         .pipe(gulp.dest('./css'));
-    gulp.src('./css/*.css')
-        .pipe(concat('all.min.css'))
-        .pipe(minifyCss())
-        .pipe(gulp.dest('./dist/css'))
 });
 
-// 合并，压缩文件
-gulp.task('scripts', function() {
+// 压缩文件
+gulp.task('min', function() {
     gulp.src('./js/*.js')
-        .pipe(concat('all.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('./dist/js'));
+        .pipe(uglify());
+    gulp.src('./css/*.css')
+        .pipe(minifyCss());
+});
+
+//监听
+gulp.task("watchscss",function(){
+    //监听文件变化
+    gulp.watch('./scss/*.scss', function(){
+        gulp.run('sass');
+    });
 });
 
 // 默认任务
 gulp.task('default', function(){
     gulp.run('lint', 'scripts');
-
-    // 监听文件变化
-    // gulp.watch('./js/*.js', function(){
-    //     gulp.run('lint', 'sass', 'scripts');
-    // });
 });

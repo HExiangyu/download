@@ -3,10 +3,12 @@
     <head>
         <#include "import.ftl">
     </head>
-    <body class="container">
+    <body>
         <#include "header.ftl">
         <#-- This processes the enclosed content:  -->
-        <#nested>
+        <div class="container">
+            <#nested>
+        </div>
         <#include "footer.ftl">
     </body>
 </html>

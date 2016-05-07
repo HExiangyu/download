@@ -1,3 +1,18 @@
+$default-color: #1ABC9C;
 .navi{
-  height: 50px;
+  height: 80px;
+  background-color: $default-color;
+  .logo{
+    width: 200px;
+    height: 100%;
+    display: inline-block;
+  }
+  .category-item{
+    display: inline-block;
+    height: 100%;
+    width: 200px;
+    vertical-align: top;
+    line-height: 3.5;
+    font-size: 22px;
+  }
 }
