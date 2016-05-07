@@ -1,4 +1,8 @@
 $default-color: #1ABC9C;
+$default-font: 14px/23px proxima-nova-alt, "Proxima Nova Alt", sans-serif;
+body{
+  font: $default-font;
+}
 .navi{
   height: 80px;
   background-color: $default-color;
@@ -10,7 +14,7 @@ $default-color: #1ABC9C;
   .category-item{
     display: inline-block;
     height: 100%;
-    width: 200px;
+    width: 150px;
     vertical-align: top;
     line-height: 3.5;
     font-size: 22px;
