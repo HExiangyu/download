@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : xxx
+ Source Server         : ali
  Source Server Type    : MySQL
  Source Server Version : 50712
- Source Host           : xxx
+ Source Host           : www.ctguqmx.com
  Source Database       : test
 
  Target Server Type    : MySQL
  Target Server Version : 50712
  File Encoding         : utf-8
 
- Date: 05/04/2016 13:50:13 PM
+ Date: 05/21/2016 11:12:48 AM
 */
 
 SET NAMES utf8;
@@ -30,6 +30,7 @@ CREATE TABLE `soft_download_link` (
   `create_time` timestamp NULL DEFAULT NULL,
   `update_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `user_id` int(11) DEFAULT NULL,
+  `deleted_status` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -42,6 +43,7 @@ CREATE TABLE `soft_software_version` (
   `soft_id` int(11) DEFAULT NULL,
   `version_id` int(11) DEFAULT NULL,
   `remark` varchar(255) DEFAULT NULL,
+  `deleted_status` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -57,6 +59,7 @@ CREATE TABLE `soft_tag` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `create_time` timestamp NULL DEFAULT NULL,
   `update_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_status` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -69,6 +72,7 @@ CREATE TABLE `soft_tag_ref` (
   `tag_id` int(11) DEFAULT NULL,
   `obj_id` int(11) DEFAULT NULL COMMENT '被贴标签的项目',
   `obj_type` int(2) DEFAULT NULL COMMENT '被贴标签的项目类型',
+  `0deleted_status` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -82,7 +86,8 @@ CREATE TABLE `soft_user` (
   `pwd` varchar(50) DEFAULT NULL,
   `create_time` timestamp NULL DEFAULT NULL,
   `update_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `level` int(1) DEFAULT NULL COMMENT '用户级别'
+  `level` int(1) DEFAULT NULL COMMENT '用户级别',
+  `deleted_status` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -98,6 +103,7 @@ CREATE TABLE `soft_version` (
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `user_id` int(11) DEFAULT NULL COMMENT '提交用户',
+  `deleted_status` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -110,6 +116,7 @@ CREATE TABLE `soft_version_link` (
   `version_id` int(11) DEFAULT NULL,
   `download_link_id` int(11) DEFAULT NULL,
   `remark` varchar(255) DEFAULT NULL,
+  `deleted_status` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -129,6 +136,7 @@ CREATE TABLE `sort_software` (
   `update_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `default_version_id` int(11) DEFAULT NULL COMMENT '默认版本id',
   `user_id` int(11) DEFAULT NULL COMMENT '提交软件的用户',
+  `deleted_status` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
