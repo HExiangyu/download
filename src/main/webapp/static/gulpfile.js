@@ -20,8 +20,14 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
     gulp.src('./scss/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('dist/css'))
 });
+//软件详情页的css
+gulp.task('sfcss', function(){
+    gulp.src('./scss/software/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('dist/css/software'));
+})
 
 // 压缩文件
 gulp.task('min', function() {
@@ -34,8 +40,8 @@ gulp.task('min', function() {
 //监听
 gulp.task("watchscss",function(){
     //监听文件变化
-    gulp.watch('./scss/*.scss', function(){
-        gulp.run('sass');
+    gulp.watch('./scss/software/*.scss', function(){
+        gulp.run('sfcss');
     });
 });
 

@@ -1,0 +1,1 @@
+ALTER TABLE `test`.`sort_software` ADD COLUMN `ident` varchar(255) COMMENT '软件唯一ident' AFTER `deleted_status`, ADD UNIQUE `ident_unique` USING HASH (`ident`) comment '';

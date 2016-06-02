@@ -1,8 +1,8 @@
-<#--<#import "layout/common.ftl" as u>-->
-<#--<@u.page title="首页">-->
-<#assign title = "首页">
-<#include "layout/import.ftl">
-<#include "layout/header.ftl">
+<#import "layout/common.ftl" as u>
+<@u.page title="首页" keywords="软件下载" description="软件下载站">
+<#--<#assign title="首页">-->
+<#--<#include "layout/import.ftl">-->
+<#--<#include "layout/header.ftl">-->
 <link rel="stylesheet" href="static/css/index.css">
 <link href="//cdn.bootcss.com/unslider/2.0.3/css/unslider.css" rel="stylesheet">
 <link href="//cdn.bootcss.com/unslider/2.0.3/css/unslider-dots.css" rel="stylesheet">
@@ -37,4 +37,4 @@
 </div>
 <script src="//cdn.bootcss.com/unslider/2.0.3/js/unslider-min.js"></script>
 <script src="static/js/index.js"></script>
-<#--</@u.page>-->
+</@u.page>
