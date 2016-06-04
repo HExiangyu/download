@@ -1,4 +1,4 @@
-<#import "layout/common.ftl" as u>
+<#import "layout/commonLayout.ftl" as u>
 <@u.page title="首页" keywords="软件下载" description="软件下载站">
 <#--<#assign title="首页">-->
 <#--<#include "layout/import.ftl">-->

@@ -29,6 +29,13 @@ gulp.task('sfcss', function(){
         .pipe(gulp.dest('dist/css/software'));
 })
 
+//软件后台的css
+gulp.task('admincss', function(){
+    gulp.src('./scss/admin/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('dist/css/admin'));
+})
+
 // 压缩文件
 gulp.task('min', function() {
     gulp.src('./js/*.js')
@@ -40,8 +47,8 @@ gulp.task('min', function() {
 //监听
 gulp.task("watchscss",function(){
     //监听文件变化
-    gulp.watch('./scss/software/*.scss', function(){
-        gulp.run('sfcss');
+    gulp.watch('./scss/admin/*.scss', function(){
+        gulp.run('admincss');
     });
 });
 

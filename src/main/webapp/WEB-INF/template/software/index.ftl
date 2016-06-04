@@ -1,4 +1,4 @@
-<#import "../layout/common.ftl" as u>
+<#import "../layout/commonLayout.ftl" as u>
 <#assign name = "${software.name}">
 <@u.page title="${name}" keywords="${software.keywords!}" description="${software.meta_desc!}">
 <link rel="stylesheet" href="/static/dist/css/software/index.css">
