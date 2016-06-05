@@ -10,10 +10,10 @@
 .admin-area{
   .admin-nav{
     display: inline-block;
-    width: 30%;
+    width: 20%;
     .administrator{
       background-color: #b3a5b4;
-      height: 110px;
+      height: 100px;
       padding: 27px 38px;
       border-bottom: solid 2px transparent;
       .portrait{
@@ -36,16 +36,16 @@
         }
         div {
           height: 27px;
-          line-height: 2.3;
+          line-height: 2.1;
         }
       }
     }
     .admin-list{
       background-color: #4c5457;
       margin: 0;
-      padding: 20px 30px;
       font-size: 16px;
       padding: 0;
+      height: 600px;
       ul{
         padding: 0;
         li {
@@ -69,40 +69,53 @@
   .admin-content{
     display: inline-block;
     vertical-align: top;
-    width: 69%;
+    width: 79%;
     margin-left: -4px;
       .content-title{
-        height: 110px;
+        height: 100px;
         padding: 20px 30px;
         line-height: 2.6;
         font-size: 25px;
         background-color: #fff;
-        border-bottom: solid 2px #ddd;
+        border-bottom: solid 2px transparent;
         i{
           color: #ddd;
           margin-right: 30px;
         }
       }
+    .admin-content-area{
+      padding:15px 0 0 15px;
+      height: 600px;
+    }
   }
 }
 
 .software-list{
   .index{
+    padding: 15px;
+    width: 100%;
     display: inline-block;
-    width: 35%;
-    margin:20px;
     background-color: #fff;
-    border:solid 1px #ddd;
+    border: solid 1px transparent;
+    height: 100%;
     .software-item{
       height: 30px;
       padding: 0 15px;
       line-height: 2;
     }
+    .search{
+      width: 300px;
+    }
   }
-  .detail{
-    display: inline-block;
-    margin:20px 0 0 0;
-    background-color: #fff;
-    border:solid 1px #ddd;
+}
+
+.new-software{
+  padding: 15px;
+  width: 100%;
+  eight: 100%;
+  background-color: #fff;
+  border: solid 1px transparent;
+  .form-field{
+    width: 50%;
   }
 }

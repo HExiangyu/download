@@ -10,7 +10,7 @@
     </div>
     <div class="admin-content">
         <div class="content-title"><i class="fa fa-align-justify"></i>${contentTitle}</div>
-        <div>
+        <div class="admin-content-area">
             <#nested>
         </div>
     </div>

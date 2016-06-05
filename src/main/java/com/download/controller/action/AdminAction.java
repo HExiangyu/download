@@ -18,4 +18,9 @@ public class AdminAction {
     public String admin(){
         return "admin/index";
     }
+
+    @RequestMapping("newSoftware")
+    public String newSoftware(){
+        return "admin/newSoftware";
+    }
 }
