@@ -15,6 +15,11 @@ public class SoftwareService {
     @Qualifier("softwareDaoImpl")
     SoftwareDao softwareDao;
 
+    /**
+     * 通过软件ident获取软件对象
+     * @param ident
+     * @return
+     */
     public Software getByIdent(String ident){
         return softwareDao.getByIdent(ident);
     }

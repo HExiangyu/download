@@ -33,9 +33,9 @@ public class Software implements Serializable{
 
     private String ident;//软件唯一ident
 
-    private String keywords;//
+    private String keywords;//seo用关键词
 
-    private String meta_desc;//
+    private String meta_desc;//seo用描述信息
 
 
     public Long getId() {

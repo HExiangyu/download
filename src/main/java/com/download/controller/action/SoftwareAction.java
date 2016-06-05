@@ -3,7 +3,6 @@ package com.download.controller.action;
 import com.download.bean.JsonData;
 import com.download.bean.Software;
 import com.download.service.SoftwareService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -34,14 +33,23 @@ public class SoftwareAction{
         return "software/index";
     }
 
+    /**
+     * 添加软件页面
+     * @return
+     */
     @RequestMapping("add")
     public String add(){
         return "software/add";
     }
 
+    /**
+     * 快速添加软件处理
+     * @param softwareUrl 软件官网网址
+     * @return
+     */
     @RequestMapping("doAdd")
     @ResponseBody
-    public String doAdd(@RequestParam("softwareUrl") String softwareUrl) throws JsonProcessingException {
+    public String doAdd(@RequestParam("softwareUrl") String softwareUrl) {
         return new JsonData(true,"success").toJSONString();
     }
 }

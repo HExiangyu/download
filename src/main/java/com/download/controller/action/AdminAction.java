@@ -11,21 +11,37 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("admin")
 public class AdminAction {
+    /**
+     * 登录页面
+     * @return
+     */
     @RequestMapping("login")
     public String login(){
         return "admin/login";
     }
 
+    /**
+     * 首页,即软件列表页
+     * @return
+     */
     @RequestMapping("index")
     public String admin(){
         return "admin/index";
     }
 
+    /**
+     * 新增软件页面
+     * @return
+     */
     @RequestMapping("newSoftware")
     public String newSoftware(){
         return "admin/newSoftware";
     }
 
+    /**
+     * 新增软件处理
+     * @return
+     */
     @RequestMapping("doAddSoftware")
     @ResponseBody
     public String doAddSoftware(){
