@@ -4,7 +4,6 @@ import com.download.bean.JsonData;
 import com.download.bean.Software;
 import com.download.service.SoftwareService;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -43,7 +42,6 @@ public class SoftwareAction{
     @RequestMapping("doAdd")
     @ResponseBody
     public String doAdd(@RequestParam("softwareUrl") String softwareUrl) throws JsonProcessingException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.writeValueAsString(new JsonData(true,"success"));
+        return new JsonData(true,"success").toJSONString();
     }
 }
