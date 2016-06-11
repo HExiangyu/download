@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SoftwareDao {
     Software getByIdent(String ident);
+    long save(Software software);
 }

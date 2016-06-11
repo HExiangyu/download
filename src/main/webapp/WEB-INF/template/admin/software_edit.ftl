@@ -3,7 +3,7 @@
 <div class="new-software">
     <form class="ui form" id="create">
         <div class="field form-field">
-            <input type="text" id="name" placeholder="软件名称">
+            <input type="text" id="name" placeholder="软件名称" value="$software.name">
         </div>
         <div class="field form-field">
             <input type="text" id="common-name" placeholder="软件别名">
@@ -32,7 +32,7 @@
         <div class="ui button" onclick="Create.submit()">添加</div>
     </form>
 </div>
-<#include "../layout/simditor-import.ftl">
+    <#include "../layout/simditor-import.ftl">
 <script>
     var editor = new Simditor({
         textarea: $('#desc')

@@ -22,8 +22,8 @@
                     <td>Google Chrome</td>
                     <td>Google</td>
                     <td>
-                        <a href="">审核</a>&nbsp;&nbsp;
-                        <a href="">编辑</a>&nbsp;&nbsp;
+                        <#--<a href="">审核</a>&nbsp;&nbsp;-->
+                        <a href="/admin/software_edit/google">编辑</a>&nbsp;&nbsp;
                         <a href="">删除</a>&nbsp;&nbsp;
                     </td>
                 </tr>

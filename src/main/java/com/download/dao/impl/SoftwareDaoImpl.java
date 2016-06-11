@@ -22,4 +22,9 @@ public class SoftwareDaoImpl implements SoftwareDao{
     public Software getByIdent(String ident) {
         return softwareDao.getByIdent(ident);
     }
+
+    @Override
+    public long save(Software software) {
+        return softwareDao.save(software);
+    }
 }
