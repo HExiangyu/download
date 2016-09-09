@@ -4,6 +4,9 @@ import com.download.Exception.MsgException;
 import com.download.bean.JsonData;
 import com.download.bean.Software;
 import com.download.service.SoftwareService;
+import com.download.util.RequestUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -20,38 +23,18 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("admin")
 public class AdminAction {
+
+    private static final Logger logger = LoggerFactory.getLogger(AdminAction.class);
+
     @Autowired
     private SoftwareService softwareService;
 
-    /**
-     * 登录页面
-     * @return
-     */
-    @RequestMapping("login")
-    public String login(){
-        return "admin/login";
-    }
-
-    /**
-     * 首页,即软件列表页
-     * @return
-     */
-    @RequestMapping("index")
-    public String admin(){
-        return "admin/index";
-    }
-
-    /**
-     * 新增软件页面
-     * @return
-     */
-    @RequestMapping("newSoftware")
-    public String newSoftware(){
-        return "admin/newSoftware";
-    }
+    @Autowired
+    private RequestUtil requestUtil;
 
     /**
      * 新增软件处理
+     *
      * @return
      */
     @RequestMapping("doAddSoftware")
@@ -66,17 +49,9 @@ public class AdminAction {
         String keyWords = request.getParameter("keywords");
         String metaDesc = request.getParameter("meta_desc");
         String desc = request.getParameter("description");
-        softwareService.validatorForAdmin(name,commonName,ident,url,companyName,remark,keyWords,metaDesc,desc);
-        return new JsonData(true,"").toJSONString();
+        softwareService.validatorForAdmin(name, commonName, ident, url, companyName, remark, keyWords, metaDesc, desc);
+        return JsonData.simpleSuccessJsonReturnDate();
     }
 
-    /**
-     * 软件编辑
-     */
-    @RequestMapping("software_edit/{softwareIdent}")
-    public String softwareEdit(@PathVariable("softwareIdent") String ident, ModelMap map){
-        Software software = softwareService.getByIdent(ident);
-        map.addAttribute("software",software);
-        return "admin/software_edit";
-    }
+
 }

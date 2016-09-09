@@ -50,6 +50,6 @@ public class SoftwareAction{
     @RequestMapping("doAdd")
     @ResponseBody
     public String doAdd(@RequestParam("softwareUrl") String softwareUrl) {
-        return new JsonData(true,"success").toJSONString();
+        return JsonData.simpleSuccessJsonReturnDate();
     }
 }

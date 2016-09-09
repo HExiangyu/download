@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 
 /**
+ * 正常页面路由
  * Created by hxy on 16/4/30.
  */
 
@@ -21,7 +22,7 @@ public class HomePage {
     UserService userService;
 
     @RequestMapping("")
-    public ModelAndView rootIndex(ModelMap map) {
+    public ModelAndView rootIndex() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("test", "index");
         System.out.println(userService.countUser());
@@ -30,7 +31,7 @@ public class HomePage {
     }
 
     @RequestMapping("index")
-    public ModelAndView index(ModelMap map) {
+    public ModelAndView index() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("test", "index");
         System.out.println(userService.insertUser());
