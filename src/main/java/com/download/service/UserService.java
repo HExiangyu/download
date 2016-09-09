@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     @Autowired
-    @Qualifier("userDaoImpl")
     UserDao userDao;
 
 
@@ -29,7 +28,7 @@ public class UserService {
         user.setName("name");
         user.setAddr("addr");
         user.setNature("nature sadasd");
-        long result =  userDao.insert(user);
+        long result =  userDao.save(user);
         System.out.println(result);
         return result;
     }

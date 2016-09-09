@@ -34,12 +34,16 @@
     <cache name="User"
            maxElementsInMemory="100"
            eternal="false"
-           timeToIdleSeconds="1200"
-           timeToLiveSeconds="1200"
+           timeToIdleSeconds="1222"
+           timeToLiveSeconds="1222"
            overflowToDisk="true"/>
 
-
-
+    <cache name="Software"
+           maxElementsInMemory="1000"
+           eternal="false"
+           timeToIdleSeconds="6666"
+           timeToLiveSeconds="6666"
+           overflowToDisk="true"/>
 
 
 </ehcache>  

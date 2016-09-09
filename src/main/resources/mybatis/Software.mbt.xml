@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.download.dao.SoftwareDao">
+
+    <!--private Long id;//-->
+
+    <!--private String name;//软件名-->
+
+    <!--private String common_name;//软件别名-->
+
+    <!--private String url;//软件官网-->
+
+    <!--private String company_name;//软件所属公司名-->
+
+    <!--private String description;//软件描述-->
+
+    <!--private String remark;//备注-->
+
+    <!--private Timestamp create_time;//-->
+
+    <!--private Timestamp update_time;//-->
+
+    <!--private Long default_version_id;//默认版本id-->
+
+    <!--private Long user_id;//提交软件的用户-->
+
+    <!--private Long deleted_status;//-->
+
+
     <select id="getByIdent" parameterType="string" resultType="com.download.bean.Software">
         SELECT * FROM soft_software WHERE ident = #{ident}
     </select>
+
+    <insert id="save" parameterType="com.download.bean.Software" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO soft_software (name,common_name,url,company_name,description,remark,create_time,update_time,default_version_id,user_id,deleted_status)
+                VALUES (#{name},#{common_name},#{url},#{company_name},#{description},#{remark},#{create_time},#{update_time},#{default_version_id},#{user_id},#{deleted_status})
+    </insert>
 </mapper>

@@ -3,20 +3,20 @@
 <mapper namespace="com.download.dao.UserDao">
 
     <select id="count" resultType="long">
-        select count(*) from user
+        select count(*) from soft_user
     </select>
 
 
     <delete id="delete" parameterType="long">
-        delete from user where id=#{id}
+        delete from soft_user where id=#{id}
     </delete>
 
     <select id="findByName" parameterType="string" resultType="map">
-        select * from user where name=#{name}
+        select * from soft_user where name=#{name}
     </select>
 
-    <insert id="insert" parameterType="com.download.bean.User" useGeneratedKeys="true" keyProperty="id">
-        insert into user (name,remark,nature, addr) values (#{name},#{remark},#{nature},#{addr})
+    <insert id="save" parameterType="com.download.bean.User" useGeneratedKeys="true" keyProperty="id">
+        insert into soft_user (name,remark,nature, addr) values (#{name},#{remark},#{nature},#{addr})
     </insert>
 
 

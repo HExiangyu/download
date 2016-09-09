@@ -22,7 +22,7 @@ public class TestAction {
 
     @RequestMapping("login")
     @ResponseBody
-    public List<String> login(){
+    public String login(){
         List<String> list = new ArrayList<>();
         list.add("asd");
         list.add("qweqwe");
@@ -30,7 +30,7 @@ public class TestAction {
         list.add("qweqwe");
         list.add("qweqwe");
         list.add("123dsa");
-        return list;
+        return "json date";
     }
 
 

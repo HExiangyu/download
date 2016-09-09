@@ -14,7 +14,6 @@ import org.springframework.util.StringUtils;
 @Service
 public class SoftwareService {
     @Autowired
-    @Qualifier("softwareDaoImpl")
     SoftwareDao softwareDao;
 
     /**
